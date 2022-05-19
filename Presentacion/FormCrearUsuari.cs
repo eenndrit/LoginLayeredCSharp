@@ -70,7 +70,7 @@ namespace PorraGironaOfficial
                         connection.Open();
                         MySqlCommand command = new MySqlCommand(cmdText, connection);
                         int files_afectades = command.ExecuteNonQuery();
-                        this.Hide();
+                        this.Close();
                         FormPrincipal FormPrincipal = new FormPrincipal();
                         FormPrincipal.Show();
                     }
