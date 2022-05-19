@@ -75,7 +75,7 @@ namespace PorraGironaOfficial
                         connection.Open();
                         MySqlCommand command = new MySqlCommand(cmdText, connection);
                         int files_afectades = command.ExecuteNonQuery();//Ejecutamos el strinc de insert
-                        this.Hide();//cerramos la vista en la que estamos
+                        this.Close();//cerramos la vista en la que estamos
                         FormPrincipal FormPrincipal = new FormPrincipal();//habrimos la vista principal
                         FormPrincipal.Show();//la mostramos
                     }
