@@ -32,27 +32,6 @@ namespace PorraGironaOfficial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (txtNombre.Text != "")
-            //{
-            //    if (txtApellidos.Text != "")
-            //    {
-            //        if (txtAlias.Text != "")
-            //        {
-            //            if (txtPassword.Text != "")
-            //            {
-            //                if (txtNifDni.Text != "")
-            //                {
-
-            //                }
-            //                else msgError("Please enter Nif or Dni");
-            //            }
-            //            else msgError("Please enter password");
-            //        }
-            //        else msgError("Please enter alias");
-            //    }
-            //    else msgError("Please enter last name");
-            //}
-            //else msgError("please enter name");
 
             if(txtNombre.Text != "" && txtApellidos.Text != "" && txtAlias.Text != "" && txtPassword.Text != "" && txtNifDni.Text != "")
             {
@@ -90,6 +69,14 @@ namespace PorraGironaOfficial
         {
             msgErrorCrearUser.Text = msg;
             msgErrorCrearUser.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormPrincipal menuPrincipal = new FormPrincipal();
+            menuPrincipal.Owner = this;
+            menuPrincipal.Show();
+            this.Hide();
         }
     }
 }

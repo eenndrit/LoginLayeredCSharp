@@ -56,6 +56,7 @@ namespace PorraGironaOfficial
                             || txtUser.Text == "Admin" && txtContraseña.Text == "admin" || txtUser.Text == "admin" && txtContraseña.Text == "Admin")
                         {
                             FormMenuAdmin menuAdmin = new FormMenuAdmin();
+                            menuAdmin.Owner = this;
                             menuAdmin.Show();
                             this.Hide();
                         }
@@ -63,6 +64,7 @@ namespace PorraGironaOfficial
                         {
                             //meto el formulario principal
                             FormMenuPrincipal mainMenu = new FormMenuPrincipal();
+                            mainMenu.Owner = this;
                             mainMenu.Show();
                             this.Hide();
                         }

@@ -146,7 +146,7 @@ namespace PorraGironaOfficial
             this.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcceder.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAcceder.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnAcceder.Location = new System.Drawing.Point(814, 498);
+            this.btnAcceder.Location = new System.Drawing.Point(819, 498);
             this.btnAcceder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAcceder.Name = "btnAcceder";
             this.btnAcceder.Size = new System.Drawing.Size(366, 58);
@@ -205,7 +205,7 @@ namespace PorraGironaOfficial
             this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearUsuario.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCrearUsuario.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnCrearUsuario.Location = new System.Drawing.Point(818, 645);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(820, 645);
             this.btnCrearUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
             this.btnCrearUsuario.Size = new System.Drawing.Size(366, 58);

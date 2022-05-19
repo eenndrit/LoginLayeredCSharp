@@ -20,7 +20,16 @@ namespace PorraGironaOfficial
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             FormPrincipal menuPrincipal = new FormPrincipal();
+            menuPrincipal.Owner = this;
             menuPrincipal.Show();
+            this.Hide();
+        }
+
+        private void btnAdminEquipos_Click(object sender, EventArgs e)
+        {
+            FormEditarEquip editarEquip = new FormEditarEquip();
+            editarEquip.Owner = this;
+            editarEquip.Show();
             this.Hide();
         }
     }
