@@ -59,10 +59,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(20, 238);
+            this.button1.Location = new System.Drawing.Point(20, 274);
             this.button1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(227, 67);
+            this.button1.Size = new System.Drawing.Size(270, 67);
             this.button1.TabIndex = 0;
             this.button1.Text = "PARTIDOS";
             this.button1.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.Location = new System.Drawing.Point(20, 337);
+            this.button2.Location = new System.Drawing.Point(20, 376);
             this.button2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(270, 67);
@@ -95,10 +95,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button3.Location = new System.Drawing.Point(20, 433);
+            this.button3.Location = new System.Drawing.Point(20, 477);
             this.button3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(215, 67);
+            this.button3.Size = new System.Drawing.Size(270, 67);
             this.button3.TabIndex = 2;
             this.button3.Text = "MIS PORRAS";
             this.button3.UseVisualStyleBackColor = false;

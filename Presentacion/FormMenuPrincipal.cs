@@ -17,5 +17,12 @@ namespace PorraGironaOfficial
         {
             InitializeComponent();
         }
+
+        //private void pictureBox2_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //    FormPrincipal FormPrincipal = new FormPrincipal();
+        //    FormPrincipal.Show();
+        //}
     }
 }
