@@ -18,6 +18,10 @@ namespace PorraGironaOfficial
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormPrincipal());
+            //cambio tres4
+            //prueba
+
+
         }
     }
 }
