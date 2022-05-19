@@ -110,6 +110,8 @@ namespace PorraGironaOfficial
             {
                 try
                 {
+                    // ME FALTA MIRAR SI EL EQUIPO QUE QUIERO BORRAR EXISTE, EN ESE CASO MOSTRALA MENSAJE EN EL LABEL!!!!!!!!!!!!!!!!!!!!!!!!
+
                     string nomEquipEliminar = txtNomEquipEliminar.Text.ToLower();
                     string cmdText = $"Delete from Equip where nomEquip = '{nomEquipEliminar}';";
 
