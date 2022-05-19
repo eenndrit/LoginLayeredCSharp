@@ -70,5 +70,13 @@ namespace PorraGironaOfficial
             msgErrorCrearUser.Text = msg;
             msgErrorCrearUser.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormPrincipal menuPrincipal = new FormPrincipal();
+            menuPrincipal.Owner = this;
+            menuPrincipal.Show();
+            this.Hide();
+        }
     }
 }

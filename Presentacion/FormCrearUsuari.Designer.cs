@@ -44,6 +44,8 @@
             this.btnMinimizar2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.msgErrorCrearUser = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lblBack = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar2)).BeginInit();
@@ -54,7 +56,7 @@
             // 
             this.pictureBox1.Image = global::Presentacion.Properties.Resources.CarnetSoci1;
             this.pictureBox1.Location = new System.Drawing.Point(-321, 204);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1381, 298);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -66,7 +68,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Presentacion.Properties.Resources.JugadorFoto2;
             this.pictureBox2.Location = new System.Drawing.Point(1457, 239);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(541, 479);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -142,7 +144,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNombre.Location = new System.Drawing.Point(1031, 74);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(6);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(458, 34);
             this.txtNombre.TabIndex = 7;
@@ -151,7 +153,7 @@
             // 
             this.txtApellidos.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtApellidos.Location = new System.Drawing.Point(1069, 176);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(6);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(420, 34);
             this.txtApellidos.TabIndex = 8;
@@ -160,7 +162,7 @@
             // 
             this.txtAlias.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAlias.Location = new System.Drawing.Point(991, 292);
-            this.txtAlias.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtAlias.Margin = new System.Windows.Forms.Padding(6);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(498, 34);
             this.txtAlias.TabIndex = 9;
@@ -169,7 +171,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.Location = new System.Drawing.Point(1086, 409);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(6);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(403, 34);
             this.txtPassword.TabIndex = 10;
@@ -178,7 +180,7 @@
             // 
             this.txtNifDni.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNifDni.Location = new System.Drawing.Point(1049, 519);
-            this.txtNifDni.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNifDni.Margin = new System.Windows.Forms.Padding(6);
             this.txtNifDni.Name = "txtNifDni";
             this.txtNifDni.Size = new System.Drawing.Size(439, 34);
             this.txtNifDni.TabIndex = 11;
@@ -235,12 +237,41 @@
             this.msgErrorCrearUser.Text = "message error";
             this.msgErrorCrearUser.Visible = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(1732, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(69, 47);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "<-";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.BackColor = System.Drawing.Color.Transparent;
+            this.lblBack.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblBack.ForeColor = System.Drawing.Color.White;
+            this.lblBack.Location = new System.Drawing.Point(1741, 60);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(52, 23);
+            this.lblBack.TabIndex = 17;
+            this.lblBack.Text = "Back";
+            // 
             // FormCrearUsuari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
             this.ClientSize = new System.Drawing.Size(1973, 714);
+            this.Controls.Add(this.lblBack);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.msgErrorCrearUser);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnMinimizar2);
@@ -260,7 +291,7 @@
             this.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormCrearUsuari";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -291,6 +322,8 @@
         private System.Windows.Forms.PictureBox btnMinimizar2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label msgErrorCrearUser;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblBack;
     }
 }
 
