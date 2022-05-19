@@ -69,6 +69,8 @@ namespace PorraGironaOfficial
             // 
             this.btnAdminPartidos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnAdminPartidos.FlatAppearance.BorderSize = 3;
+            this.btnAdminPartidos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdminPartidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdminPartidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminPartidos.Font = new System.Drawing.Font("Berlin Sans FB", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdminPartidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -106,6 +108,8 @@ namespace PorraGironaOfficial
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Brown;
             this.btnLogOut.FlatAppearance.BorderSize = 3;
+            this.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLogOut.Location = new System.Drawing.Point(1386, 12);
@@ -133,6 +137,8 @@ namespace PorraGironaOfficial
             // 
             this.btnAdminEquipos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnAdminEquipos.FlatAppearance.BorderSize = 3;
+            this.btnAdminEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdminEquipos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAdminEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminEquipos.Font = new System.Drawing.Font("Berlin Sans FB", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdminEquipos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
