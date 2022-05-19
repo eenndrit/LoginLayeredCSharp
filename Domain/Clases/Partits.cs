@@ -25,5 +25,20 @@ namespace Domain.Clases
             get { return llistaPartits; }
             set { llistaPartits = value; }
         }
+        //metodos
+        public bool ComprobarSiExiste(Partit partidos)
+        {
+            //Comprobamos que un mismo e
+            bool existe = llistaPartits.Any(p => p.EquipLocal == partidos.EquipLocal);
+            //https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findall?view=net-6.0#system-collections-generic-list-1-findall(system-predicate((-0)))
+            //a traves de la base de datos puedo ver si hay mas de 2
+            if (existe == true)
+            {
+                existe = llistaPartits.Any(Partit => Partit.EquipVisitant == partidos.EquipVisitant);
+                return existe;
+            }
+            return existe;
+
+        }
     }
 }

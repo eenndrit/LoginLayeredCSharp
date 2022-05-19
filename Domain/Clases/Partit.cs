@@ -40,5 +40,50 @@ namespace Domain.Clases
         {
             idPartit = idpartido;
         }
+        public int IdPartit
+        {
+            get;
+            set;
+        }
+        public DateTime DataIniciPartit
+        {
+            get;
+            set;
+        }
+        public string EstatPartit
+        {
+            get;
+            set;
+        }
+        public int GolsVisitant
+        {
+            get;
+            set;
+        }
+        public int GolsLocal
+        {
+            get;
+            set;
+        }
+        public string Jornada
+        {
+            get;
+            set;
+        }
+        public string Temporada
+        {
+            get;
+            set;
+        }
+        public int EquipLocal
+        {
+            get;
+            set;
+        }
+        public int EquipVisitant
+        {
+            get;
+            set;
+        }
     }
 }
