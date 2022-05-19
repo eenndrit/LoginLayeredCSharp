@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace PorraGironaOfficial
 {
-    public partial class FormMenuPrincipal : Form
+    public partial class FormMenuAdmin : Form
     {
-        public FormMenuPrincipal()
+        public FormMenuAdmin()
         {
             InitializeComponent();
         }

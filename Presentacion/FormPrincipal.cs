@@ -52,10 +52,20 @@ namespace PorraGironaOfficial
                     var validLogin = user.LoginUser(txtUser.Text, txtContraseña.Text);
                     if (validLogin == true)
                     {
-                        //meto el formulario principal
-                        this.Hide();
-                        FormMenuPrincipal mainMenu = new FormMenuPrincipal();
-                        mainMenu.Show();
+                        if(txtUser.Text == "Admin" && txtContraseña.Text == "Admin" || txtUser.Text == "admin" && txtContraseña.Text == "admin"
+                            || txtUser.Text == "Admin" && txtContraseña.Text == "admin" || txtUser.Text == "admin" && txtContraseña.Text == "Admin")
+                        {
+                            FormMenuAdmin menuAdmin = new FormMenuAdmin();
+                            menuAdmin.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            //meto el formulario principal
+                            FormMenuPrincipal mainMenu = new FormMenuPrincipal();
+                            mainMenu.Show();
+                            this.Hide();
+                        }
                     }
                     else
                     {
