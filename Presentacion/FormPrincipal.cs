@@ -52,6 +52,7 @@ namespace PorraGironaOfficial
                     var validLogin = user.LoginUser(txtUser.Text, txtContraseña.Text);
                     if (validLogin == true)
                     {
+                        string GuardarUser = txtUser.Text;
                         if(txtUser.Text == "Admin" && txtContraseña.Text == "Admin" || txtUser.Text == "admin" && txtContraseña.Text == "admin"
                             || txtUser.Text == "Admin" && txtContraseña.Text == "admin" || txtUser.Text == "admin" && txtContraseña.Text == "Admin")
                         {

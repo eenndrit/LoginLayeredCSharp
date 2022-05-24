@@ -32,5 +32,21 @@ namespace PorraGironaOfficial
             editarEquip.Show();
             this.Hide();
         }
+
+        private void btnAdminPartidos_Click(object sender, EventArgs e)
+        {
+            FormEditarPartit editarPartit = new FormEditarPartit();
+            editarPartit.Owner = this;
+            editarPartit.Show();
+            this.Hide();
+        }
+
+        private void btnAdminUsuarios_Click(object sender, EventArgs e)
+        {
+            FormEditarUsuari editarUser = new FormEditarUsuari();
+            editarUser.Owner = this;
+            editarUser.Show();
+            this.Hide();
+        }
     }
 }
