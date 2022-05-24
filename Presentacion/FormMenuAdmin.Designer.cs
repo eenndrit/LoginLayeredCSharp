@@ -38,6 +38,7 @@ namespace PorraGironaOfficial
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdminEquipos = new System.Windows.Forms.Button();
+            this.btnAdminUsuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -74,13 +75,14 @@ namespace PorraGironaOfficial
             this.btnAdminPartidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminPartidos.Font = new System.Drawing.Font("Berlin Sans FB", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdminPartidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdminPartidos.Location = new System.Drawing.Point(298, 245);
+            this.btnAdminPartidos.Location = new System.Drawing.Point(303, 216);
             this.btnAdminPartidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdminPartidos.Name = "btnAdminPartidos";
             this.btnAdminPartidos.Size = new System.Drawing.Size(852, 138);
             this.btnAdminPartidos.TabIndex = 7;
             this.btnAdminPartidos.Text = "ADMIN - PARTIDOS";
             this.btnAdminPartidos.UseVisualStyleBackColor = true;
+            this.btnAdminPartidos.Click += new System.EventHandler(this.btnAdminPartidos_Click);
             // 
             // label1
             // 
@@ -142,7 +144,7 @@ namespace PorraGironaOfficial
             this.btnAdminEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminEquipos.Font = new System.Drawing.Font("Berlin Sans FB", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdminEquipos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdminEquipos.Location = new System.Drawing.Point(298, 404);
+            this.btnAdminEquipos.Location = new System.Drawing.Point(303, 375);
             this.btnAdminEquipos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdminEquipos.Name = "btnAdminEquipos";
             this.btnAdminEquipos.Size = new System.Drawing.Size(852, 138);
@@ -151,12 +153,31 @@ namespace PorraGironaOfficial
             this.btnAdminEquipos.UseVisualStyleBackColor = true;
             this.btnAdminEquipos.Click += new System.EventHandler(this.btnAdminEquipos_Click);
             // 
+            // btnAdminUsuarios
+            // 
+            this.btnAdminUsuarios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdminUsuarios.FlatAppearance.BorderSize = 3;
+            this.btnAdminUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdminUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdminUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminUsuarios.Font = new System.Drawing.Font("Berlin Sans FB", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAdminUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdminUsuarios.Location = new System.Drawing.Point(303, 531);
+            this.btnAdminUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdminUsuarios.Name = "btnAdminUsuarios";
+            this.btnAdminUsuarios.Size = new System.Drawing.Size(852, 138);
+            this.btnAdminUsuarios.TabIndex = 16;
+            this.btnAdminUsuarios.Text = "ADMIN - USUARIOS";
+            this.btnAdminUsuarios.UseVisualStyleBackColor = true;
+            this.btnAdminUsuarios.Click += new System.EventHandler(this.btnAdminUsuarios_Click);
+            // 
             // FormMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Brown;
             this.ClientSize = new System.Drawing.Size(1453, 891);
+            this.Controls.Add(this.btnAdminUsuarios);
             this.Controls.Add(this.btnAdminEquipos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLogOut);
@@ -188,5 +209,6 @@ namespace PorraGironaOfficial
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdminEquipos;
+        private System.Windows.Forms.Button btnAdminUsuarios;
     }
 }

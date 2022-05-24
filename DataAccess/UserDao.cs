@@ -14,6 +14,7 @@ namespace DataAccess
     {
         string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=porra";
 
+        //METODO LOGIN 
         public bool Login(string user, string pass)
         {
             using (var connection = GetConnection())
@@ -22,14 +23,61 @@ namespace DataAccess
                 using (var command = new MySqlCommand())
                 {
                     command.Connection = connection;
+                    //CON ESTA SELECT COMPRUEBO SI EL USUARIO EXISTE
                     command.CommandText = $"select * from Usuari where alias='{user}' and password='{pass}';";
                     command.CommandType = CommandType.Text;
                     MySqlDataReader reader = command.ExecuteReader();
+                    //SI CONTIENE LINEAS LA SELECT ES QUE EXISTE EL USER, SINO NO EXISTE
                     if (reader.HasRows)
                     {
                         return true;
                     }
                     else return false;
+                }
+            }
+        }
+        public void AñadirPartido(string equipLocal, string equipVisitant, string estatPartit, int golLocal, int golVisitant, string jornada, string temporada, DateTime fechaPartido)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new MySqlCommand())
+                {
+                            command.Connection = connection;
+                            command.CommandText = $"insert into partit(nomEquipLocal, nomEquipVisitant, dataIniciPartit, estatPartit, golsLocal, golsVisitant, jornada, temporada) \n" +
+                                                    $"values('{equipLocal}','{equipVisitant}','{fechaPartido}','{estatPartit}','{golLocal}','{golVisitant}','{jornada}','{temporada}')";
+                            command.CommandType = CommandType.Text;
+                            MySqlDataReader reader = command.ExecuteReader();                    
+                }
+            }
+        }
+
+        public void EliminarPartido(string equipLocal, string equipVisitant, string temporada)
+        {
+            using(var connection = GetConnection())
+            {
+                connection.Open();
+                using(var command = new MySqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = $"delete from partit where nomEquipLocal = '{equipLocal}' and nomEquipVisitant = '{equipVisitant}' and temporada = '{temporada}';";
+                    command.CommandType = CommandType.Text;
+                    MySqlDataReader reader = command.ExecuteReader();
+                }
+            }
+        }
+
+        public void EliminarUser(string user)
+        {
+            using(var connection = GetConnection())
+            {
+                connection.Open();
+                using(var command = new MySqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = $"delete from usuari where alias = '{user}'";
+                    command.CommandType = CommandType.Text;
+                    MySqlDataReader reader = command.ExecuteReader();
                 }
             }
         }
