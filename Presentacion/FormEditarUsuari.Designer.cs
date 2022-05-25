@@ -39,6 +39,7 @@ namespace PorraGironaOfficial
             this.btnBackUser = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblMsgUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -167,6 +168,19 @@ namespace PorraGironaOfficial
             this.label3.TabIndex = 10;
             this.label3.Text = "Back";
             // 
+            // lblMsgUser
+            // 
+            this.lblMsgUser.AutoSize = true;
+            this.lblMsgUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblMsgUser.Font = new System.Drawing.Font("Berlin Sans FB", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMsgUser.ForeColor = System.Drawing.Color.White;
+            this.lblMsgUser.Location = new System.Drawing.Point(280, 494);
+            this.lblMsgUser.Name = "lblMsgUser";
+            this.lblMsgUser.Size = new System.Drawing.Size(92, 24);
+            this.lblMsgUser.TabIndex = 11;
+            this.lblMsgUser.Text = "msgError";
+            this.lblMsgUser.Visible = false;
+            // 
             // FormEditarUsuari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -174,6 +188,7 @@ namespace PorraGironaOfficial
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1065, 685);
+            this.Controls.Add(this.lblMsgUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBackUser);
@@ -204,6 +219,7 @@ namespace PorraGironaOfficial
         private System.Windows.Forms.Button btnBackUser;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMsgUser;
     }
 }
 
