@@ -14,6 +14,7 @@ namespace PorraGironaOfficial
 {
     public partial class FormEditarPartit : Form
     {
+        UserModel cn = new UserModel();
         public FormEditarPartit()
         {
             InitializeComponent();
@@ -224,6 +225,14 @@ namespace PorraGironaOfficial
         {
             UserModel user = new UserModel();
             var validEditarPartit = user.EditarPartidoCreadoUser(txtEquipLocalEditar.Text, txtEquipVisitantEditar.Text, txtTemporadaEditar.Text, Convert.ToInt32(txtGLconfirmar.Text), Convert.ToInt32(txtGVconfirmar.Text), txtESconfirmar.Text);
+        }
+
+        private void btnVerPartidos_Click(object sender, EventArgs e)
+        {
+            btnBack.Visible = true;
+            dataGridView1.Visible = true;
+            dataGridView1.Location = new Point(13, 112);
+            dataGridView1.DataSource = cn.ConsultaDT();
         }
     }
 }

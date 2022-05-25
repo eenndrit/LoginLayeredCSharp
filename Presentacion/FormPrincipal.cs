@@ -95,5 +95,11 @@ namespace PorraGironaOfficial
             mainMenu.Show();
         }
 
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    FormEditarPartidoCreado mainMenu = new FormEditarPartidoCreado();
+        //    mainMenu.Show();
+        //}
     }
 }

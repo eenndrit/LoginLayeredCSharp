@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
+using System.Data;
 
 
 namespace Domain
@@ -58,6 +59,12 @@ namespace Domain
         public bool EditarPartidoCreadoUser(string equipLocal, string equipVisitant, string temporada, int golLocal, int golVisitant, string estat)
         {
             return userDao.AccederEditarPartidoCreado(equipLocal, equipVisitant, temporada, golLocal, golVisitant, estat);
+        }
+
+        //METODO MOSTRAR DATE GRID VIEW
+        public DataTable ConsultaDT()
+        {
+            return userDao.ConsultarPartidos();
         }
     }
 }

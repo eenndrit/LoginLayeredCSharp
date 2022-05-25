@@ -43,6 +43,7 @@ namespace PorraGironaOfficial
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,6 +209,15 @@ namespace PorraGironaOfficial
             this.dataGridView1.Size = new System.Drawing.Size(726, 558);
             this.dataGridView1.TabIndex = 12;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(458, 81);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(235, 56);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // FormEditarPartidoCreado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -215,6 +225,7 @@ namespace PorraGironaOfficial
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1229, 834);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -254,6 +265,7 @@ namespace PorraGironaOfficial
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button4;
     }
 }
 
