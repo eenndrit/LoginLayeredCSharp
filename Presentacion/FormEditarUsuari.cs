@@ -35,13 +35,22 @@ namespace PorraGironaOfficial
         {
             UserModel user = new UserModel();
             var validUserDelete = user.EliminarUsuarioUser(txtAliasEliminar.Text);
-            if(validUserDelete == true)
+            if (validUserDelete == "2")
             {
                 msgError("Usuario eliminado");
+                txtAliasEliminar.Clear();
+            }
+            else if (validUserDelete == "0")
+            {
+                msgError("No puedes eliminar ADMIN");
+                txtAliasEliminar.Clear();
+                txtAliasEliminar.Focus();
             }
             else
             {
                 msgError("Usuario inexistente");
+                txtAliasEliminar.Clear();
+                txtAliasEliminar.Focus();
             }
         }
 

@@ -31,9 +31,33 @@ namespace Domain
         }
 
         //METODO PARA ELIMINAR USUARIO
-        public bool EliminarUsuarioUser(string user)
+        public string EliminarUsuarioUser(string user)
         {
             return userDao.EliminarUser(user);
+        }
+
+        //METODO PARA AÑADIR EQUIPO
+        public bool AñadirEquipoUser(string nomEquip, string nomEstadi, string municipi)
+        {
+            return userDao.AñadriEquipo(nomEquip, nomEstadi, municipi);
+        }
+
+        //METODO PARA ELIMINAR EQUIPO
+        public bool EliminarEquipoUser(string nomEquip)
+        {
+            return userDao.EliminarEquipo(nomEquip);
+        }
+
+        //METODO PARA CREAR USUARIO
+        public bool CrearUsuarioUser(string nombre, string apellidos, string alias, string password, string nif)
+        {
+            return userDao.CrearUsaurio(nombre, apellidos, alias, password, nif);
+        }
+
+        //METODO PARA EDITAR UN PARTIDO YA CREADO
+        public bool EditarPartidoCreadoUser(string equipLocal, string equipVisitant, string temporada, int golLocal, int golVisitant, string estat)
+        {
+            return userDao.AccederEditarPartidoCreado(equipLocal, equipVisitant, temporada, golLocal, golVisitant, estat);
         }
     }
 }

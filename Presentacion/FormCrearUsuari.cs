@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
 
 namespace PorraGironaOfficial
 {
@@ -44,29 +45,26 @@ namespace PorraGironaOfficial
                 string alias = txtAlias.Text.ToLower();
                 string password = txtPassword.Text.ToLower();
                 string nif = txtNifDni.Text;
-
-                //CREO LA COMANDA PARA INSERIR LOS VALORES
-                string cmdText = "INSERT INTO Usuari(nom, cognoms, nif, alias, password, dataAlta) VALUES('" + nombre + "', '" + apellidos + "', '" + nif + "', '" + alias + "', '" + password + "', current_timestamp);";
-
-                try
+                UserModel user = new UserModel();
+                var validCrearUser = user.CrearUsuarioUser(nombre, apellidos, alias, password, nif);
+                if(validCrearUser == true)
                 {
-                    //UTILIZO UN USING, SE CERRARA AUTOMATICO AL FINALIZAR
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        //LE PASO LA COMANDA Y LA EJECUTA
-                        MySqlCommand command = new MySqlCommand(cmdText, connection);
-                        int files_afectades = command.ExecuteNonQuery();
-                        this.Close();
-                        //UNA VEZ HACE EL INSERT, ABRE EL MENU LOGIN PARA QUE EL USUARIO PUEDA ACCEDER
-                        FormPrincipal FormPrincipal = new FormPrincipal();
-                        FormPrincipal.Show();
-                    }
+                    msgError("Este usuario ya existe");
+                    txtAlias.Clear();
+                    txtApellidos.Clear();
+                    txtNifDni.Clear();
+                    txtNombre.Clear();
+                    txtPassword.Clear();
+                    txtNombre.Focus();
                 }
-                catch (Exception ex)
+                else
                 {
-                    //EN CASO DE ERROR, NOS SALTARA MENSAJE CON EL ERROR
-                    MessageBox.Show("Error comanda INSERT: " + ex.Message);
+                    msgError("Usuario creado");
+                    txtAlias.Clear();
+                    txtApellidos.Clear();
+                    txtNifDni.Clear();
+                    txtNombre.Clear();
+                    txtPassword.Clear();
                 }
             }
             else

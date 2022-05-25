@@ -73,6 +73,13 @@ namespace PorraGironaOfficial
             this.label3 = new System.Windows.Forms.Label();
             this.lblMssgErrorAñadir = new System.Windows.Forms.Label();
             this.lblMssgErrorEliminar = new System.Windows.Forms.Label();
+            this.lblMsgErrorEditar = new System.Windows.Forms.Label();
+            this.txtESconfirmar = new System.Windows.Forms.TextBox();
+            this.lblESconfirmar = new System.Windows.Forms.Label();
+            this.txtGVconfirmar = new System.Windows.Forms.TextBox();
+            this.lblGVconfirmar = new System.Windows.Forms.Label();
+            this.txtGLconfirmar = new System.Windows.Forms.TextBox();
+            this.lblGLconfirmar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblPartits
@@ -503,7 +510,7 @@ namespace PorraGironaOfficial
             this.btnEnviarEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviarEditar.Font = new System.Drawing.Font("Berlin Sans FB", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEnviarEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEnviarEditar.Location = new System.Drawing.Point(806, 550);
+            this.btnEnviarEditar.Location = new System.Drawing.Point(806, 809);
             this.btnEnviarEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEnviarEditar.Name = "btnEnviarEditar";
             this.btnEnviarEditar.Size = new System.Drawing.Size(177, 91);
@@ -511,6 +518,7 @@ namespace PorraGironaOfficial
             this.btnEnviarEditar.Text = "ENVIAR";
             this.btnEnviarEditar.UseVisualStyleBackColor = false;
             this.btnEnviarEditar.Visible = false;
+            this.btnEnviarEditar.Click += new System.EventHandler(this.btnEnviarEditar_Click);
             // 
             // btnEnviarEliminar
             // 
@@ -643,6 +651,88 @@ namespace PorraGironaOfficial
             this.lblMssgErrorEliminar.Text = "mssgError";
             this.lblMssgErrorEliminar.Visible = false;
             // 
+            // lblMsgErrorEditar
+            // 
+            this.lblMsgErrorEditar.AutoSize = true;
+            this.lblMsgErrorEditar.BackColor = System.Drawing.Color.Transparent;
+            this.lblMsgErrorEditar.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMsgErrorEditar.ForeColor = System.Drawing.Color.White;
+            this.lblMsgErrorEditar.Location = new System.Drawing.Point(806, 904);
+            this.lblMsgErrorEditar.Name = "lblMsgErrorEditar";
+            this.lblMsgErrorEditar.Size = new System.Drawing.Size(90, 23);
+            this.lblMsgErrorEditar.TabIndex = 44;
+            this.lblMsgErrorEditar.Text = "mssgError";
+            this.lblMsgErrorEditar.Visible = false;
+            // 
+            // txtESconfirmar
+            // 
+            this.txtESconfirmar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtESconfirmar.Location = new System.Drawing.Point(540, 769);
+            this.txtESconfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtESconfirmar.Name = "txtESconfirmar";
+            this.txtESconfirmar.Size = new System.Drawing.Size(443, 34);
+            this.txtESconfirmar.TabIndex = 50;
+            this.txtESconfirmar.Visible = false;
+            // 
+            // lblESconfirmar
+            // 
+            this.lblESconfirmar.AutoSize = true;
+            this.lblESconfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.lblESconfirmar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblESconfirmar.ForeColor = System.Drawing.Color.White;
+            this.lblESconfirmar.Location = new System.Drawing.Point(539, 734);
+            this.lblESconfirmar.Name = "lblESconfirmar";
+            this.lblESconfirmar.Size = new System.Drawing.Size(198, 26);
+            this.lblESconfirmar.TabIndex = 49;
+            this.lblESconfirmar.Text = "ESTADO PARTIDO";
+            this.lblESconfirmar.Visible = false;
+            // 
+            // txtGVconfirmar
+            // 
+            this.txtGVconfirmar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtGVconfirmar.Location = new System.Drawing.Point(540, 673);
+            this.txtGVconfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtGVconfirmar.Name = "txtGVconfirmar";
+            this.txtGVconfirmar.Size = new System.Drawing.Size(443, 34);
+            this.txtGVconfirmar.TabIndex = 48;
+            this.txtGVconfirmar.Visible = false;
+            // 
+            // lblGVconfirmar
+            // 
+            this.lblGVconfirmar.AutoSize = true;
+            this.lblGVconfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.lblGVconfirmar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGVconfirmar.ForeColor = System.Drawing.Color.White;
+            this.lblGVconfirmar.Location = new System.Drawing.Point(539, 637);
+            this.lblGVconfirmar.Name = "lblGVconfirmar";
+            this.lblGVconfirmar.Size = new System.Drawing.Size(193, 26);
+            this.lblGVconfirmar.TabIndex = 47;
+            this.lblGVconfirmar.Text = "GOLES VISITANTE";
+            this.lblGVconfirmar.Visible = false;
+            // 
+            // txtGLconfirmar
+            // 
+            this.txtGLconfirmar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtGLconfirmar.Location = new System.Drawing.Point(540, 579);
+            this.txtGLconfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtGLconfirmar.Name = "txtGLconfirmar";
+            this.txtGLconfirmar.Size = new System.Drawing.Size(443, 34);
+            this.txtGLconfirmar.TabIndex = 46;
+            this.txtGLconfirmar.Visible = false;
+            // 
+            // lblGLconfirmar
+            // 
+            this.lblGLconfirmar.AutoSize = true;
+            this.lblGLconfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.lblGLconfirmar.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGLconfirmar.ForeColor = System.Drawing.Color.White;
+            this.lblGLconfirmar.Location = new System.Drawing.Point(539, 543);
+            this.lblGLconfirmar.Name = "lblGLconfirmar";
+            this.lblGLconfirmar.Size = new System.Drawing.Size(158, 26);
+            this.lblGLconfirmar.TabIndex = 45;
+            this.lblGLconfirmar.Text = "GOLES LOCAL";
+            this.lblGLconfirmar.Visible = false;
+            // 
             // FormEditarPartit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -650,6 +740,13 @@ namespace PorraGironaOfficial
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1484, 961);
+            this.Controls.Add(this.txtESconfirmar);
+            this.Controls.Add(this.lblESconfirmar);
+            this.Controls.Add(this.txtGVconfirmar);
+            this.Controls.Add(this.lblGVconfirmar);
+            this.Controls.Add(this.txtGLconfirmar);
+            this.Controls.Add(this.lblGLconfirmar);
+            this.Controls.Add(this.lblMsgErrorEditar);
             this.Controls.Add(this.lblMssgErrorEliminar);
             this.Controls.Add(this.lblMssgErrorAñadir);
             this.Controls.Add(this.label3);
@@ -748,6 +845,13 @@ namespace PorraGironaOfficial
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblMssgErrorAñadir;
         private System.Windows.Forms.Label lblMssgErrorEliminar;
+        private System.Windows.Forms.Label lblMsgErrorEditar;
+        private System.Windows.Forms.TextBox txtESconfirmar;
+        private System.Windows.Forms.Label lblESconfirmar;
+        private System.Windows.Forms.TextBox txtGVconfirmar;
+        private System.Windows.Forms.Label lblGVconfirmar;
+        private System.Windows.Forms.TextBox txtGLconfirmar;
+        private System.Windows.Forms.Label lblGLconfirmar;
     }
 }
 

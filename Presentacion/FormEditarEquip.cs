@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Domain;
 
 namespace PorraGironaOfficial
 {
@@ -64,49 +65,59 @@ namespace PorraGironaOfficial
             //PRIMERO COMPRUEBO QUE NO HAYA DEJADO NINGUN CAMPO VACIO
             if (txtNomEquipAñadir.Text != "" && txtNomEstadi.Text != "" && txtMunicipi.Text != "")
             {
-                //PASO TODOS LOS VALORES A UNAS VARIABLES Y CREO LA COMANDA
                 string nomEquip1 = txtNomEquipAñadir.Text.ToLower();
                 string nomEstadi = txtNomEstadi.Text.ToLower();
                 string nomMunicipi = txtMunicipi.Text.ToLower();
-                string cmdText = "INSERT INTO Equip(nomEquip, nomCamp, municipi) VALUES('" + nomEquip1 + "', '" + nomEstadi + "', '" + nomMunicipi + "');";
-                string cmdText2 = $"Select count(nomEquip) from Equip;";
-
-                //CON UN TRY, EJECUTO LA COMANDA Y EN CASO DE ERROR ME SALTA ABAJO Y ME MUESTRA EL MENSAJE DE ERROR
-                try
+                UserModel user = new UserModel();
+                var validEquipo = user.AñadirEquipoUser(nomEquip1, nomEstadi, nomMunicipi);
+                if(validEquipo == true)
                 {
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        MySqlCommand command2 = new MySqlCommand(cmdText2, connection);
-                        int files_afectades2 = command2.ExecuteNonQuery();
-                        //if (files_afectades2 != 0)
-                        //{
-
-                        //    msgError("Este equipo ya existe");
-                        //    txtNomEquipAñadir.Clear();
-                        //    txtNomEstadi.Clear();
-                        //    txtMunicipi.Clear();
-                        //    txtNomEquipAñadir.Focus();
-                        //}
-                        //else
-                        //{
-                            MySqlCommand command = new MySqlCommand(cmdText, connection);
-                            int files_afectades = command.ExecuteNonQuery();
-                            this.Close();
-                            FormMenuAdmin menuAdmin = new FormMenuAdmin();
-                            menuAdmin.Show();
-                        //}
-                    }
+                    msgError("Este equipo ya existe");
+                    txtMunicipi.Clear();
+                    txtNomEquipAñadir.Clear();
+                    txtNomEstadi.Clear();
+                    txtNomEquipAñadir.Focus();
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error comanda INSERT: " + ex.Message);
+                    msgError("Equipo añadido");
+                    txtMunicipi.Clear();
+                    txtNomEquipAñadir.Clear();
+                    txtNomEstadi.Clear();
                 }
             }
             else
             {
                 //SI NO A RELLENADO TODOS LOS CAMPOS LE MUESTRO ESTE MENSAJE POR UN LABEL
                 msgError("Please enter all values");
+            }
+        }
+
+        //METODO PARA ELIMINAR EQUIPO
+        private void btnEnviarEliminar_Click(object sender, EventArgs e)
+        {
+            //COMPRUEBO QUE NO DEJE EL CAMPO VACIO
+            if(txtNomEquipEliminar.Text != "")
+            {
+                    string nomEquipEliminar = txtNomEquipEliminar.Text.ToLower();
+                    UserModel user = new UserModel();
+                    var validElimEquipo = user.EliminarEquipoUser(nomEquipEliminar);
+                    if(validElimEquipo == true)
+                    {
+                        msgError2("Equipo eliminado");
+                        txtNomEquipEliminar.Clear();
+                    }
+                    else
+                    {
+                        msgError2("Equipo inexistente");
+                        txtNomEquipEliminar.Clear();
+                        txtNomEquipEliminar.Focus();
+                    }
+            }
+            else
+            {
+                //LABEL QUE MOSTRARIA ESTER MENSAJE
+                msgError2("Enter values please");
             }
         }
 
@@ -117,42 +128,10 @@ namespace PorraGironaOfficial
             lblMessageError.Visible = true;
         }
 
-        //METODO PARA ELIMINAR EQUIPO
-        private void btnEnviarEliminar_Click(object sender, EventArgs e)
+        private void msgError2(string msg)
         {
-            //COMPRUEBO QUE NO DEJE EL CAMPO VACIO
-            if(txtNomEquipEliminar.Text != "")
-            {
-                //CON UN TRY EJECUTO LA COMANDA
-                try
-                {
-                    // ME FALTA MIRAR SI EL EQUIPO QUE QUIERO BORRAR EXISTE, EN ESE CASO MOSTRALA MENSAJE EN EL LABEL!!!!!!!!!!!!!!!!!!!!!!!!
-
-                    string nomEquipEliminar = txtNomEquipEliminar.Text.ToLower();
-                    string cmdText = $"Delete from Equip where nomEquip = '{nomEquipEliminar}';";
-
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        MySqlCommand command = new MySqlCommand(cmdText, connection);
-                        int files_afectades = command.ExecuteNonQuery();
-                        msgError("Equipo borrado correctamente");
-                        this.Close();
-                        FormMenuAdmin menuAdmin = new FormMenuAdmin();
-                        menuAdmin.Show();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    //EN CASO DE ERROR SALTA EL MENSAJE
-                    MessageBox.Show("Error comanda INSERT: " + ex.Message);
-                }
-            }
-            else
-            {
-                //LABEL QUE MOSTRARIA ESTER MENSAJE
-                msgError("Equipo inexistente");
-            }
+            lblMessageError2.Text = msg;
+            lblMessageError2.Visible = true;
         }
     }
 }

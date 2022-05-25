@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using System.Threading;
 
 namespace PorraGironaOfficial
 {
@@ -68,10 +69,16 @@ namespace PorraGironaOfficial
             lblEquipLocalEditar.Visible = true;
             lblEquipVisitantEditar.Visible = true;
             lblTemporadaEditar.Visible = true;
+            lblESconfirmar.Visible = true;
+            lblGLconfirmar.Visible = true;
+            lblGVconfirmar.Visible = true;
             //
             txtEquipVisitantEditar.Visible = true;
             txtEquipLocalEditar.Visible = true;
             txtTemporadaEditar.Visible = true;
+            txtESconfirmar.Visible = true;
+            txtGLconfirmar.Visible = true;
+            txtGVconfirmar.Visible = true;
             //
             btnEnviarEditar.Visible = true;
             //
@@ -121,19 +128,79 @@ namespace PorraGironaOfficial
 
         private void btnEnviarAñadir_Click(object sender, EventArgs e)
         {
-            //UserModel user = new UserModel();
-            //var validLogin = user.LoginUser(txtUser.Text, txtContraseña.Text);
             UserModel user = new UserModel();
-            //DateTime fecha = new DateTime();
-            //fecha = Convert.ToDateTime(dateTimePickerAñadir.Value.ToString());
             var validPartit = user.AñadirPartidoUser(txtEquipLocalAñadir.Text, txtEquipVisitantAñadir.Text, txtEstatPartitAñadir.Text, Convert.ToInt32(txtGoLocalAñadir.Text), Convert.ToInt32(txtGolVisitantAñadir.Text), txtJornadaAñadir.Text, txtTemporadaAñadir.Text, dateTimePickerAñadir.Value);
             if (validPartit == true)
             {
                 msgError("Este partido ya existe");
+                txtEquipLocalAñadir.Clear();
+                txtEquipVisitantAñadir.Clear();
+                txtEstatPartitAñadir.Clear();
+                txtGoLocalAñadir.Clear();
+                txtGolVisitantAñadir.Clear();
+                txtJornadaAñadir.Clear();
+                txtTemporadaAñadir.Clear();
+                txtEquipLocalAñadir.Focus();
             }
             else
             {
                 msgError("Partido añadido");
+                txtEquipLocalAñadir.Clear();
+                txtEquipVisitantAñadir.Clear();
+                txtEstatPartitAñadir.Clear();
+                txtGoLocalAñadir.Clear();
+                txtGolVisitantAñadir.Clear();
+                txtJornadaAñadir.Clear();
+                txtTemporadaAñadir.Clear();
+            }
+        }
+
+        private void btnEnviarEliminar_Click(object sender, EventArgs e)
+        {
+            UserModel user = new UserModel();
+            var validPartit = user.EliminarPartidoUser(txtEquipLocalEliminar.Text, txtEquipVisitantEliminar.Text, txtTemporadaEliminar.Text);
+            if(validPartit == true)
+            {
+                msgError2("Partido eliminado");
+                txtEquipLocalEliminar.Clear();
+                txtEquipVisitantEliminar.Clear();
+                txtTemporadaEliminar.Clear();
+            }
+            else
+            {
+                msgError2("Partido inexistente");
+                txtEquipLocalEliminar.Clear();
+                txtEquipVisitantEliminar.Clear();
+                txtTemporadaEliminar.Clear();
+                txtEquipLocalEliminar.Focus();
+            }
+        }
+
+        private void btnEnviarEditar_Click(object sender, EventArgs e)
+        {
+            string equipLocal = txtEquipLocalEditar.Text;
+            string equipVisitant = txtEquipVisitantEditar.Text;
+            string temporada = txtTemporadaEditar.Text;
+            string estat = txtESconfirmar.Text;
+            //int golLocal = Convert.ToInt32(txtGLconfirmar.Text);
+            //int golVisitant = Convert.ToInt32(txtGVconfirmar.Text);
+
+            UserModel user = new UserModel();
+            var validEditarPartit = user.EditarPartidoCreadoUser(equipLocal, equipVisitant, temporada, Convert.ToInt32(txtGLconfirmar.Text), Convert.ToInt32(txtGVconfirmar.Text), estat);
+            if(validEditarPartit == false)
+            {
+                msgError3("Partido inexistente");
+                txtEquipLocalEditar.Clear();
+                txtEquipVisitantEditar.Clear();
+                txtTemporadaEditar.Clear();
+                txtGLconfirmar.Clear();
+                txtGVconfirmar.Clear();
+                txtESconfirmar.Clear();
+                txtEquipLocalEditar.Focus();
+            }
+            else
+            {
+                msgError3("Partido modificado");
             }
         }
 
@@ -147,19 +214,16 @@ namespace PorraGironaOfficial
             lblMssgErrorEliminar.Text = msg;
             lblMssgErrorEliminar.Visible = true;
         }
+        private void msgError3(string msg)
+        {
+            lblMsgErrorEditar.Text = msg;
+            lblMsgErrorEditar.Visible = true;
+        }
 
-        private void btnEnviarEliminar_Click(object sender, EventArgs e)
+        private void btnConfirmar_Click(object sender, EventArgs e)
         {
             UserModel user = new UserModel();
-            var validPartit = user.EliminarPartidoUser(txtEquipLocalEliminar.Text, txtEquipVisitantEliminar.Text, txtTemporadaEliminar.Text);
-            if(validPartit == true)
-            {
-                msgError2("Partido eliminado");
-            }
-            else
-            {
-                msgError2("Partido inexistente");
-            }
+            var validEditarPartit = user.EditarPartidoCreadoUser(txtEquipLocalEditar.Text, txtEquipVisitantEditar.Text, txtTemporadaEditar.Text, Convert.ToInt32(txtGLconfirmar.Text), Convert.ToInt32(txtGVconfirmar.Text), txtESconfirmar.Text);
         }
     }
 }
