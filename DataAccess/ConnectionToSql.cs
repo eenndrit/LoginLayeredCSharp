@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace DataAccess
 {
@@ -21,6 +22,17 @@ namespace DataAccess
         protected MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);
+        }
+
+        public DataTable ConsultarPartidos()
+        {
+            string query = "select * from partit";
+            MySqlCommand cmd = new MySqlCommand(query, GetConnection());
+            MySqlDataAdapter data = new MySqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
         }
     }
 }
