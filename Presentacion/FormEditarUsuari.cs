@@ -34,7 +34,21 @@ namespace PorraGironaOfficial
         private void btnEnviarEliminarUser_Click(object sender, EventArgs e)
         {
             UserModel user = new UserModel();
-            user.EliminarUsuarioUser(txtAliasEliminar.Text);
+            var validUserDelete = user.EliminarUsuarioUser(txtAliasEliminar.Text);
+            if(validUserDelete == true)
+            {
+                msgError("Usuario eliminado");
+            }
+            else
+            {
+                msgError("Usuario inexistente");
+            }
+        }
+
+        private void msgError(string msg)
+        {
+            lblMsgUser.Text = msg;
+            lblMsgUser.Visible = true;
         }
     }
 }

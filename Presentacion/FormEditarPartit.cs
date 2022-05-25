@@ -121,10 +121,20 @@ namespace PorraGironaOfficial
 
         private void btnEnviarAñadir_Click(object sender, EventArgs e)
         {
+            //UserModel user = new UserModel();
+            //var validLogin = user.LoginUser(txtUser.Text, txtContraseña.Text);
             UserModel user = new UserModel();
             //DateTime fecha = new DateTime();
             //fecha = Convert.ToDateTime(dateTimePickerAñadir.Value.ToString());
-            user.AñadirPartidoUser(txtEquipLocalAñadir.Text, txtEquipVisitantAñadir.Text, txtEstatPartitAñadir.Text, Convert.ToInt32(txtGoLocalAñadir.Text), Convert.ToInt32(txtGolVisitantAñadir.Text), txtJornadaAñadir.Text, txtTemporadaAñadir.Text, dateTimePickerAñadir.Value);
+            var validPartit = user.AñadirPartidoUser(txtEquipLocalAñadir.Text, txtEquipVisitantAñadir.Text, txtEstatPartitAñadir.Text, Convert.ToInt32(txtGoLocalAñadir.Text), Convert.ToInt32(txtGolVisitantAñadir.Text), txtJornadaAñadir.Text, txtTemporadaAñadir.Text, dateTimePickerAñadir.Value);
+            if (validPartit == true)
+            {
+                msgError("Este partido ya existe");
+            }
+            else
+            {
+                msgError("Partido añadido");
+            }
         }
 
         private void msgError(string msg)
@@ -132,11 +142,24 @@ namespace PorraGironaOfficial
             lblMssgErrorAñadir.Text = msg;
             lblMssgErrorAñadir.Visible = true;
         }
+        private void msgError2(string msg)
+        {
+            lblMssgErrorEliminar.Text = msg;
+            lblMssgErrorEliminar.Visible = true;
+        }
 
         private void btnEnviarEliminar_Click(object sender, EventArgs e)
         {
             UserModel user = new UserModel();
-            user.EliminarPartidoUser(txtEquipLocalEliminar.Text, txtEquipVisitantEliminar.Text, txtTemporadaEliminar.Text);
+            var validPartit = user.EliminarPartidoUser(txtEquipLocalEliminar.Text, txtEquipVisitantEliminar.Text, txtTemporadaEliminar.Text);
+            if(validPartit == true)
+            {
+                msgError2("Partido eliminado");
+            }
+            else
+            {
+                msgError2("Partido inexistente");
+            }
         }
     }
 }

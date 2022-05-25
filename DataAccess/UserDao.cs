@@ -36,48 +36,99 @@ namespace DataAccess
                 }
             }
         }
-        public void AñadirPartido(string equipLocal, string equipVisitant, string estatPartit, int golLocal, int golVisitant, string jornada, string temporada, DateTime fechaPartido)
+        public bool AñadirPartido(string equipLocal, string equipVisitant, string estatPartit, int golLocal, int golVisitant, string jornada, string temporada, DateTime fechaPartido)
         {
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new MySqlCommand())
+                using(var command2 = new MySqlCommand())
                 {
+                    command2.Connection = connection;
+                    command2.CommandText = $"select * from partit where nomEquipLocal = '{equipLocal}' and nomEquipVisitant = '{equipVisitant}' and temporada = '{temporada}';";
+                    command2.CommandType = CommandType.Text;
+                    MySqlDataReader reader2 = command2.ExecuteReader();
+                    if (reader2.HasRows)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        reader2.Close();
+                        var command = new MySqlCommand();
+                        command.Connection = connection;
+                        command.CommandText = $"insert into partit(nomEquipLocal, nomEquipVisitant, dataIniciPartit, estatPartit, golsLocal, golsVisitant, jornada, temporada) \n" +
+                                                  $"values('{equipLocal}','{equipVisitant}','{fechaPartido}','{estatPartit}','{golLocal}','{golVisitant}','{jornada}','{temporada}')";
+                        command.CommandType = CommandType.Text;
+                        MySqlDataReader reader = command.ExecuteReader();
+                        return false;
+                    }
+                }
+
+            }
+        }
+
+        public bool EliminarPartido(string equipLocal, string equipVisitant, string temporada)
+        {
+            using(var connection = GetConnection())
+            {
+                connection.Open();
+                using(var command2 = new MySqlCommand())
+                {
+                    command2.Connection = connection;
+                    command2.CommandText = $"select * from partit where nomEquipLocal = '{equipLocal}' and nomEquipVisitant = '{equipVisitant}' and temporada = '{temporada}';";
+                    command2.CommandType = CommandType.Text;
+                    MySqlDataReader reader2 = command2.ExecuteReader();
+                    if (!reader2.HasRows)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        reader2.Close();
+                        var command = new MySqlCommand();
+                        command.Connection = connection;
+                        command.CommandText = $"delete from partit where nomEquipLocal = '{equipLocal}' and nomEquipVisitant = '{equipVisitant}' and temporada = '{temporada}';";
+                        command.CommandType = CommandType.Text;
+                        MySqlDataReader reader = command.ExecuteReader();
+                        return true;
+                    }
+                }
+            }
+        }
+
+        public bool EliminarUser(string user)
+        {
+            using(var connection = GetConnection())
+            {
+                connection.Open();
+                using(var command2 = new MySqlCommand())
+                {
+                    command2.Connection = connection;
+                    command2.CommandText = $"select * from usuari where alias = '{user}';";
+                    command2.CommandType = CommandType.Text;
+                    MySqlDataReader reader2 = command2.ExecuteReader();
+                    //if(user == "admin" || user == "Admin")
+                    //{
+                    //    bool userAdmin = true;
+                    //    return userAdmin;
+                    //}
+                    //else
+                    //{
+                        if (!reader2.HasRows)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            reader2.Close();
+                            var command = new MySqlCommand();
                             command.Connection = connection;
-                            command.CommandText = $"insert into partit(nomEquipLocal, nomEquipVisitant, dataIniciPartit, estatPartit, golsLocal, golsVisitant, jornada, temporada) \n" +
-                                                    $"values('{equipLocal}','{equipVisitant}','{fechaPartido}','{estatPartit}','{golLocal}','{golVisitant}','{jornada}','{temporada}')";
+                            command.CommandText = $"delete from usuari where alias = '{user}'";
                             command.CommandType = CommandType.Text;
-                            MySqlDataReader reader = command.ExecuteReader();                    
-                }
-            }
-        }
-
-        public void EliminarPartido(string equipLocal, string equipVisitant, string temporada)
-        {
-            using(var connection = GetConnection())
-            {
-                connection.Open();
-                using(var command = new MySqlCommand())
-                {
-                    command.Connection = connection;
-                    command.CommandText = $"delete from partit where nomEquipLocal = '{equipLocal}' and nomEquipVisitant = '{equipVisitant}' and temporada = '{temporada}';";
-                    command.CommandType = CommandType.Text;
-                    MySqlDataReader reader = command.ExecuteReader();
-                }
-            }
-        }
-
-        public void EliminarUser(string user)
-        {
-            using(var connection = GetConnection())
-            {
-                connection.Open();
-                using(var command = new MySqlCommand())
-                {
-                    command.Connection = connection;
-                    command.CommandText = $"delete from usuari where alias = '{user}'";
-                    command.CommandType = CommandType.Text;
-                    MySqlDataReader reader = command.ExecuteReader();
+                            MySqlDataReader reader = command.ExecuteReader();
+                            return true;
+                        }
+                    //}
                 }
             }
         }

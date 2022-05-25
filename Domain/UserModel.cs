@@ -19,21 +19,21 @@ namespace Domain
         }
 
         //METODO PARA AÑADIR PARTIDOS
-        public void AñadirPartidoUser(string equipLocal, string equipVisitant, string estatPartit, int golLocal, int golVisitant, string jornada, string temporada, DateTime fechaPartido)
+        public bool AñadirPartidoUser(string equipLocal, string equipVisitant, string estatPartit, int golLocal, int golVisitant, string jornada, string temporada, DateTime fechaPartido)
         {
-            userDao.AñadirPartido(equipLocal, equipVisitant, estatPartit, golLocal, golVisitant, jornada, temporada, fechaPartido);
+            return userDao.AñadirPartido(equipLocal, equipVisitant, estatPartit, golLocal, golVisitant, jornada, temporada, fechaPartido);
         }
 
         //METODO PARA ELIMINAR PARTIDOS
-        public void EliminarPartidoUser(string equipLocal, string equipVisitant, string temporada)
+        public bool EliminarPartidoUser(string equipLocal, string equipVisitant, string temporada)
         {
-            userDao.EliminarPartido(equipLocal, equipVisitant, temporada);
+            return userDao.EliminarPartido(equipLocal, equipVisitant, temporada);
         }
 
         //METODO PARA ELIMINAR USUARIO
-        public void EliminarUsuarioUser(string user)
+        public bool EliminarUsuarioUser(string user)
         {
-            userDao.EliminarUser(user);
+            return userDao.EliminarUser(user);
         }
     }
 }

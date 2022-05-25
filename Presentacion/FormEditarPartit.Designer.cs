@@ -72,6 +72,7 @@ namespace PorraGironaOfficial
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMssgErrorAñadir = new System.Windows.Forms.Label();
+            this.lblMssgErrorEliminar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblPartits
@@ -629,6 +630,19 @@ namespace PorraGironaOfficial
             this.lblMssgErrorAñadir.Text = "mssgError";
             this.lblMssgErrorAñadir.Visible = false;
             // 
+            // lblMssgErrorEliminar
+            // 
+            this.lblMssgErrorEliminar.AutoSize = true;
+            this.lblMssgErrorEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.lblMssgErrorEliminar.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMssgErrorEliminar.ForeColor = System.Drawing.Color.White;
+            this.lblMssgErrorEliminar.Location = new System.Drawing.Point(1269, 645);
+            this.lblMssgErrorEliminar.Name = "lblMssgErrorEliminar";
+            this.lblMssgErrorEliminar.Size = new System.Drawing.Size(90, 23);
+            this.lblMssgErrorEliminar.TabIndex = 43;
+            this.lblMssgErrorEliminar.Text = "mssgError";
+            this.lblMssgErrorEliminar.Visible = false;
+            // 
             // FormEditarPartit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -636,6 +650,7 @@ namespace PorraGironaOfficial
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1484, 961);
+            this.Controls.Add(this.lblMssgErrorEliminar);
             this.Controls.Add(this.lblMssgErrorAñadir);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -732,6 +747,7 @@ namespace PorraGironaOfficial
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblMssgErrorAñadir;
+        private System.Windows.Forms.Label lblMssgErrorEliminar;
     }
 }
 
