@@ -73,6 +73,7 @@ namespace PorraGironaOfficial
                     else
                     {
                         msgError("Incorrect username or password entered.");
+                        txtUser.Clear();
                         txtContraseña.Clear();
                         txtUser.Focus();
                     }
@@ -86,7 +87,6 @@ namespace PorraGironaOfficial
             labelErrorMessage2.Text = msg;
             labelErrorMessage2.Visible = true;
         }
-
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
