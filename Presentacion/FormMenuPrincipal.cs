@@ -20,6 +20,7 @@ namespace PorraGironaOfficial
             InitializeComponent();
         }
 
+        //BOTON PARA CERRAR SESION
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             FormPrincipal menuPrincipal = new FormPrincipal();
@@ -27,6 +28,7 @@ namespace PorraGironaOfficial
             this.Hide();
         }
 
+        //BOTON PARA IR A HACER UNA APUESTA, AL FORM DE APUESTAS
         private void button1_Click(object sender, EventArgs e)
         {
             FormCrearApuesta menuCrearApuesta = new FormCrearApuesta();
@@ -34,6 +36,7 @@ namespace PorraGironaOfficial
             this.Hide();
         }
 
+        //BOTON PARA VER TODAS LAS PORRAS QUE SE HAN HECHO, EN UN DATAGRIDVIEW
         private void button3_Click(object sender, EventArgs e)
         {
             btnBack.Visible = true;
@@ -42,6 +45,7 @@ namespace PorraGironaOfficial
             dataGridView1.Location = new Point(338, 147);
         }
 
+        //BOTON PARA VOLVER AL MENU PRINCIPAL DEL USUARIO
         private void button4_Click(object sender, EventArgs e)
         {
             FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
