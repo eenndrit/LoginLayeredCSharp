@@ -36,6 +36,7 @@ namespace PorraGironaOfficial
 
         private void button3_Click(object sender, EventArgs e)
         {
+            btnBack.Visible = true;
             dataGridView1.Visible = true;
             dataGridView1.DataSource = cn.ConsultaDT2();
             dataGridView1.Location = new Point(338, 147);
