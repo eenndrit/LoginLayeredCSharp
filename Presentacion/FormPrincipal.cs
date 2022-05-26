@@ -26,22 +26,26 @@ namespace PorraGironaOfficial
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wpara, int lparam);
 
+        //BOTON PARA CERRAR LA APP
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //BOTON DE MINIMIZAR APP
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //ESTO LO HAGO PARA PODER MOVER LAS PESTAÑAS EN CUALQUIER LUGAR DE LA PANTALLA
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        //BOTON PARA ACCEDER 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
             if (txtUser.Text != "")
@@ -82,24 +86,20 @@ namespace PorraGironaOfficial
             }
             else msgError("Please enter username");
         }
+
+        //METODO MOSTRAR MENSAJES EN LABEL
         private void msgError(string msg)
         {           
             labelErrorMessage2.Text = msg;
             labelErrorMessage2.Visible = true;
         }
 
+        //BOTON QUE TE MANDA AL FORM PARA PODER CREAR USUARIO
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormCrearUsuari mainMenu = new FormCrearUsuari();
             mainMenu.Show();
         }
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    this.Hide();
-        //    FormEditarPartidoCreado mainMenu = new FormEditarPartidoCreado();
-        //    mainMenu.Show();
-        //}
     }
 }

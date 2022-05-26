@@ -113,6 +113,7 @@ namespace PorraGironaOfficial
             btnBack.Visible = true;
         }
 
+        //BOTON PARA VOLVER AL MENU DE OPCIONES DEL ADMIN
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -120,6 +121,7 @@ namespace PorraGironaOfficial
             menuPartitAdmin.Show();
         }
 
+        //BOTON PARA VOLVER AL MENU PRINCIPAL DEL ADMIN
         private void btnVolverMenuAdmin_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -127,10 +129,13 @@ namespace PorraGironaOfficial
             menuAdmin.Show();
         }
 
+        //BOTON PARA QUERER AÑADIR UN EQUIPO
         private void btnEnviarAñadir_Click(object sender, EventArgs e)
         {
             UserModel user = new UserModel();
+            //LLAMAMOS AL METODO, PARA QUE COMPRUEBE SI ES CORRECTO O NO LOS DATOS
             var validPartit = user.AñadirPartidoUser(txtEquipLocalAñadir.Text, txtEquipVisitantAñadir.Text, txtEstatPartitAñadir.Text, Convert.ToInt32(txtGoLocalAñadir.Text), Convert.ToInt32(txtGolVisitantAñadir.Text), txtJornadaAñadir.Text, txtTemporadaAñadir.Text, dateTimePickerAñadir.Value);
+            //SI NOS DEVUELVE TRUE, EL PARTIDO YA EXISTE, NO SE HACE EL INSERT, Y LIMPIO TODOS LOS CAMPOS PARA RELLENAR DE NUEVO
             if (validPartit == true)
             {
                 msgError("Este partido ya existe");
@@ -143,6 +148,7 @@ namespace PorraGironaOfficial
                 txtTemporadaAñadir.Clear();
                 txtEquipLocalAñadir.Focus();
             }
+            //SINO, SE CREA EL PARTIDO Y LIMPIO CAMPOS
             else
             {
                 msgError("Partido añadido");
@@ -156,10 +162,13 @@ namespace PorraGironaOfficial
             }
         }
 
+        //BOTON PARA ELIMINAR PARTIDO
         private void btnEnviarEliminar_Click(object sender, EventArgs e)
         {
+            //LLAMO AL METODO PARA COMPROBAR
             UserModel user = new UserModel();
             var validPartit = user.EliminarPartidoUser(txtEquipLocalEliminar.Text, txtEquipVisitantEliminar.Text, txtTemporadaEliminar.Text);
+            //SI NOS DEVUELVE TRUE, ELIMINA EL PARTIDO, YA QUE SI QUE EXISTE, Y LIMIPO LOS CAMPOS
             if(validPartit == true)
             {
                 msgError2("Partido eliminado");
@@ -167,6 +176,7 @@ namespace PorraGironaOfficial
                 txtEquipVisitantEliminar.Clear();
                 txtTemporadaEliminar.Clear();
             }
+            //SINO NO ELIMINO PARTIDO YA QUE NO EXISTE, Y LIMPIO CAMPOS PARA RELLENAR OTRA VEZ
             else
             {
                 msgError2("Partido inexistente");
@@ -177,6 +187,7 @@ namespace PorraGironaOfficial
             }
         }
 
+        //BOTON PARA EDITAR UN PARTIDO
         private void btnEnviarEditar_Click(object sender, EventArgs e)
         {
             string equipLocal = txtEquipLocalEditar.Text;
@@ -186,8 +197,10 @@ namespace PorraGironaOfficial
             //int golLocal = Convert.ToInt32(txtGLconfirmar.Text);
             //int golVisitant = Convert.ToInt32(txtGVconfirmar.Text);
 
+            //LAMO AL METODO PARA COMPROBAR QUE EXISTE EL PARTIDO Y PODER MODIFICARLO
             UserModel user = new UserModel();
             var validEditarPartit = user.EditarPartidoCreadoUser(equipLocal, equipVisitant, temporada, Convert.ToInt32(txtGLconfirmar.Text), Convert.ToInt32(txtGVconfirmar.Text), estat);
+            //SI NOS DEVUELVE FALSE, ES QUE NO EXISTE EL PARTIDO Y NO PODEMOS MODIFICAR
             if(validEditarPartit == false)
             {
                 msgError3("Partido inexistente");
@@ -199,12 +212,14 @@ namespace PorraGironaOfficial
                 txtESconfirmar.Clear();
                 txtEquipLocalEditar.Focus();
             }
+            //SINO SI QUE PODEMOS MODIFICAR, SE HABRA HECHO Y MUESTRO MENSAJE DE CONFIRMACION
             else
             {
                 msgError3("Partido modificado");
             }
         }
 
+        //DIFERENTES METODOS PARA MOSTRAR MENSAJES DE ERROR, O CONFIRMACION EN EL LABEL
         private void msgError(string msg)
         {
             lblMssgErrorAñadir.Text = msg;
@@ -227,6 +242,7 @@ namespace PorraGironaOfficial
             var validEditarPartit = user.EditarPartidoCreadoUser(txtEquipLocalEditar.Text, txtEquipVisitantEditar.Text, txtTemporadaEditar.Text, Convert.ToInt32(txtGLconfirmar.Text), Convert.ToInt32(txtGVconfirmar.Text), txtESconfirmar.Text);
         }
 
+        //BOTON PARA VER EN UNA DATAGRIDVIEW TODOS LOS PARTIDOS CREADOS
         private void btnVerPartidos_Click(object sender, EventArgs e)
         {
             btnBack.Visible = true;

@@ -17,6 +17,10 @@ namespace PorraGironaOfficial
             InitializeComponent();
         }
 
+        // TODO ESTO SON BOTONES PARA ACCEDER A DIFERENTES FORMS DEL ADMIN
+        //
+        //----------------------------
+
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             FormPrincipal menuPrincipal = new FormPrincipal();

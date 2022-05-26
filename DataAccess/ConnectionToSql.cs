@@ -24,6 +24,7 @@ namespace DataAccess
             return new MySqlConnection(connectionString);
         }
 
+        //METODO PARA CONSULTAR TODOS LOS PARTIDOS DISPONIBLES DE UN DATAGRIDVIEW
         public DataTable ConsultarPartidos()
         {
             string query = "select * from partit";
@@ -35,6 +36,7 @@ namespace DataAccess
             return tabla;
         }
 
+        //METODO PARA CONSULTAR TODOS LAS PORRAS DISPONIBLES DE UN DATAGRIDVIEW
         public DataTable ConsultarPorras()
         {
             string query = "select * from porra";
