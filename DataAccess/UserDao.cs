@@ -249,5 +249,54 @@ namespace DataAccess
                 }
             }
         }
+
+        public string CrearPorra(string alias, int idPartit, int golLocal, int golVisitant)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command2 = new MySqlCommand())
+                {
+                    command2.Connection = connection;
+                    command2.CommandText = $"select * from Usuari where alias = '{alias}';";
+                    command2.CommandType = CommandType.Text;
+                    MySqlDataReader reader2 = command2.ExecuteReader();
+                    if (!reader2.HasRows)
+                    {
+                        return "1";
+                    }
+                    else
+                    {
+                        reader2.Close();
+                        var command3 = new MySqlCommand();
+                        command3.Connection = connection;
+                        command3.CommandText = $"select * from partit where idPartit = '{idPartit}';";
+                        command3.CommandType = CommandType.Text;
+                        MySqlDataReader reader3 = command3.ExecuteReader();
+                        if (!reader3.HasRows)
+                        {
+                            return "2";
+                        }
+                        else
+                        {
+                            reader3.Close();
+                            if(golLocal < 0 || golVisitant < 0)
+                            {
+                                return "3";
+                            }
+                            else
+                            {
+                                var command = new MySqlCommand();
+                                command.Connection = connection;
+                                command.CommandText = $"insert into porra values('{alias}', '{idPartit}', '{golLocal}', '{golVisitant}', current_timestamp, null);";
+                                command.CommandType = CommandType.Text;
+                                MySqlDataReader reader = command.ExecuteReader();
+                                return "4";
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -34,5 +34,16 @@ namespace DataAccess
 
             return tabla;
         }
+
+        public DataTable ConsultarPorras()
+        {
+            string query = "select * from porra";
+            MySqlCommand cmd = new MySqlCommand(query, GetConnection());
+            MySqlDataAdapter data = new MySqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
     }
 }

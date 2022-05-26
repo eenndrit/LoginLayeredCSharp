@@ -61,10 +61,22 @@ namespace Domain
             return userDao.AccederEditarPartidoCreado(equipLocal, equipVisitant, temporada, golLocal, golVisitant, estat);
         }
 
-        //METODO MOSTRAR DATE GRID VIEW
+        //METODO CREAR PORRA
+        public string CrearPorraUser(string alias, int idPartit, int golLocal, int golVisitant)
+        {
+            return userDao.CrearPorra(alias, idPartit, golLocal, golVisitant);
+        }
+
+        //METODO MOSTRAR DATE GRID VIEW / LISTA DE PARTIDOS
         public DataTable ConsultaDT()
         {
             return userDao.ConsultarPartidos();
+        }
+
+        //METODO MOSTRAR DATE GRID VIEW / LISTA DE PORRAS
+        public DataTable ConsultaDT2()
+        {
+            return userDao.ConsultarPorras();
         }
     }
 }
